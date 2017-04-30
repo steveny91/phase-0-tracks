@@ -1,0 +1,32 @@
+Briefly describe your understanding of what the browser does, including definitions of the following:
+When your browser(client) opens a website, it communicates with the website's server by sending a request to the server. The server then sends a response back to your browser. The browser then renders the response to what we normally see when we open a website. This process repeats itself every time we open a new website.
+
+What is HTML?
+Html is a markup language used for website creation. It provides the skeletal layout of a website. Most of the content in html is created using tags. Tags are short codes that are used to perform certain actions, such as italicize, bold, create table and list etc. A tag usually has a start and an end tag. The tags along with the content in between the tags is considered an element. Elements are split into two, block element and inline element. Block element has an invisble box around it that spans the whole width. Any content after a block element begins on a new line. Inline element however does not have this restriction. Inline element can be displayed side by side on the same line. All html elements can have attributes. They are used to provide additional information about an element. A common one would be the href (use to link a website) attribute in the <a> or <img> element. Lastly, everything inside an html object is a node. Attributes are attribute nodes, elements are element nodes, text are text nodes etc.
+
+Very briefly, explain the purpose of the following elements:
+head = contains metadata(data about the data). We don't see this in a website after it has been rendered.
+
+body = <body></body> everything inside the body will get displayed when the page is loaded. This section is what we normally view on any given webpage.
+
+p = <p></p> Paragraph tag. This tag is used to create paragraphs. The text inside the tag is displayed in a paragraph format. It adds a margin at the end and start of the paragraph that can be altered with css.
+
+form = to create a form that can take user input
+
+div = a tag that can used for grouping.
+
+span = add color to a word or text
+
+select = create a drop-down list
+
+h2 = make text a header. H2 is slightly smaller than H1 in terms of font size
+
+ol = ordered list, create a numbered list
+
+ul = unordered list, creates a list using bullet points
+
+table = creates a table
+
+tr = creates a table row
+
+td = table data, the data that goes into a cell in the table
