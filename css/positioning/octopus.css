@@ -1,0 +1,17 @@
+.hat{
+  position: absolute;
+  margin-top: 125px;
+  margin-left: 630px;
+}
+
+.glass{
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 690px;
+}
+
+.octopus{
+  position: static;
+  margin-top: 200px;
+  margin-left: 650px;
+}
