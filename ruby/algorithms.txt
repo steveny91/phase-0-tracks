@@ -1,0 +1,32 @@
+elevator:
+-Decide what floor to go to(desired floor).
+-Approach elevator.
+-Call elevator by pressing either up button or down button(desired direction).
+-If desired floor is higher than current floor, then press up arrow to go up.
+-If desired floor is lower than current floor, then press down arrow to go down.
+-Once elevator arrived, check whether elevator is going up or down(direction elevator).
+-If direction elevator is the same as desired direction, then step in if not, stay and wait for next elevator.
+-Once right elevator (desired direction is the same as direction elevator) arrives step in.
+-Press the button corresponding to desired floor.
+-Wait until elevator arrives to desired floor.
+-Once arrived at desired floor.
+-Step out.
+
+
+
+Grocery shopping at a grocery store:
+1) Define list of grocery items that needs to be purchased
+2) Read top uncrossed item on the list
+3) Determine what category item is (fruits,vegetables, meat etc.).
+4) Find right aisle by walking from one side to other side looking at the aisle categories to find the matching category
+5) If right aisle is found, proceed to look in aisle for item
+6) if right aisle is not found look through whole grocery store for item
+7) if item is found cross item off list
+8) if right item is not found. Write it on another list and cross it off.
+9) repeat step 2-8 for whole list
+10) if list is all crossed out, proceed to cashier
+11) place item one by one on counter to be tallied
+12) give cashier exactly or more money than the total cost of the items
+13) if money given is exact cost of the items then proceed to leave the store
+14) if money given is more than the cost of the items wait for change then proceed to leave the store
+15) repeat steps 2-14 at another store with the list of unfounded items
