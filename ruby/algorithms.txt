@@ -7,10 +7,12 @@ elevator:
 -Once elevator arrived, check whether elevator is going up or down(direction elevator).
 -If direction elevator is the same as desired direction, then step in if not, stay and wait for next elevator.
 -Once right elevator (desired direction is the same as direction elevator) arrives step in.
--Press the button corresponding to desired floor.
+-Press the button corresponding to desired floor by matching the desired floor number to the number on the button.
+-If going to lobby then press the L button
+-If going to parking lot, press the p button
 -Wait until elevator arrives to desired floor.
--Once arrived at desired floor.
--Step out.
+-Once arrived at desired floor step out.
+
 
 
 
