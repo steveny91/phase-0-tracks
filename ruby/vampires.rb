@@ -56,7 +56,6 @@ def vampirecheck
   elsif agecheck != TRUE && garlic != TRUE && insurance != TRUE
     puts "Almost certainly a vampire"
   elsif agecheck != TRUE || garlic != TRUE || insurance != TRUE1
-  
     puts "Probably a vampire."
   else
     puts "Results inconclusive"
