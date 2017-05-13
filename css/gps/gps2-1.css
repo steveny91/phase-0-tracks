@@ -1,3 +1,73 @@
-body {
-  background-color: pink
+body{
+  background-image: url(https://www.planwallpaper.com/static/images/1757527.jpg);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+}
+
+
+header{
+  border: 1px solid white;
+  width: 90%;
+  padding: 36px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: white;
+  margin-left:20px;
+}
+
+
+a:visited{
+  color: green;
+}
+
+a:link{
+  color: purple;
+}
+
+a:hover{
+  color: red;
+}
+
+footer{
+  border: 1px solid black;
+  width: 90%;
+  padding: 37px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: white;
+  text-align: center;
+  margin-left:20px;
+}
+
+
+.column-1{
+  display: inline-block;
+  background-color:grey;
+  width: 45%;
+  border: 3px dashed black;
+  padding: 15px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  margin-left:20px;
+}
+
+.column-2{
+  display: inline-block;
+  background-color: grey;
+  width: 45%;
+  vertical-align: top;
+  border: 3px dashed black;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 62px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+@media screen and (max-width: 950px) {
+  .column-1 {
+    display:block;
+    width: 94%;
+  }
+  .column-2 {
+    display:block;
+    width: 94%;
+    margin-left:20px;
+  }
 }
