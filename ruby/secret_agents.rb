@@ -46,6 +46,26 @@ end
 
 
 =begin
-decrypt(encrypt("swordfish"))
+This nested method works, because of the input matches what the second method takes as in input. for example decrypt(encrypt("swordfish")) encrypt returns a string that can be inputted into decrypt.
 
+psuedocode
+#Encrypt
+#  Get string first
+#  get the first letter
+#  advance by one
+#  get next letter and advance by one(repeat)
+# = when last letter is advanced by one
+# = combine and output the word
+
+# decrypt
+# get first letter
+# find index of letter
+# subtract by one to get new letter
+# repeats process till last letter
+# combine and output the word
+
+# ask Secret agent for Encrypt or decrypt choice
+# if encryp run encrypt
+#    else if decrypt run decryp
+# one encrypt or decrypt run, output and exit
 =end
