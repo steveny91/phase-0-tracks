@@ -1,0 +1,22 @@
+Name at least three categories of CSS adjustments (example: colors)?
+size, positioning, background, border, font
+
+What are the three ways to link a CSS rule to an HTML document? Which one is the best and why?
+using <link> to link a style sheet
+using <style> to put all the style information in the header
+inputting the style directly directly in the element itself
+I think it's better to have a style sheet so it can be more organized and also having it a .css file, allows sublime to show suggestions, which prevents syntax errors and gives a guideline.
+
+What is a selector? Give examples of at least three types of selectors.
+Selectors in css allows styles to be applied to only a selected element or part of an element.
+The three types are element selectors, class selectors and ID selectors
+
+What is the box model?
+A box model shows that box element content are contained inside an invisible box. The box has a margin that surrounds the border. The border surrounds the padding and finally the padding surrounds the text.
+
+Explain and give an example of the cascading effect of CSS.
+Cascading effect of css means that there is a hierarchy of priority when there are several css rule affecting an element. The rule is chosen by looking which is the more specific rule when looking at an element. For example a html contains a <div class=color> and the rules body{font-color: red} and .color{font-color:blue} is applied, the result would be that the fonts will turn blue as .color selector is more specific than the element selector.
+
+Name two CSS techniques that assist in responsive design.
+fluid width
+media queries
