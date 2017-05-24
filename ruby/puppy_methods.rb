@@ -56,3 +56,8 @@ customers = []
 until customers.length == 50
   customers << Cafeteria.new 
 end
+
+customers.each {|customer| 
+customer.eating("hotdog")
+customer.drinking("soda")
+}
