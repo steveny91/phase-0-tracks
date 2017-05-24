@@ -34,3 +34,25 @@ fido.speak(5)
 fido.roll_over
 fido.dog_years(6)
 fido.handshake
+
+
+#RELEASE 2
+class Cafeteria
+  
+  def initialize
+    puts "Customer enters cafeteria."
+  end
+  
+  def eating(food)
+    puts "Customer eats #{food}."
+  end
+  
+  def drinking(drink)
+    puts "Customer drinks #{drink}."
+  end
+end
+
+customers = []
+until customers.length == 50
+  customers << Cafeteria.new 
+end
