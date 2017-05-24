@@ -19,6 +19,13 @@ class Puppy
     puts age * 7 
   end
 
+  def handshake 
+    puts "Extends paw."
+  end
+
+  def initialize
+    puts "Initializing new puppy instance..."
+  end
 end
 
 fido = Puppy.new
@@ -26,3 +33,4 @@ fido.fetch("ball")
 fido.speak(5)
 fido.roll_over
 fido.dog_years(6)
+fido.handshake
