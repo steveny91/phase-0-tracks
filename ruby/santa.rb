@@ -1,5 +1,5 @@
 class Santa
-  attr_reader :ethnicity
+  attr_reader :ethnicity, :reindeer_ranking
   attr_accessor :age, :gender
 
   def initialize (gender, ethnicity)
@@ -46,9 +46,8 @@ p tj.ethnicity
 
 
 
-=begin
 
-random santa generator
+
 def santa_gen(int)
   santas = []
   example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
@@ -56,14 +55,18 @@ def santa_gen(int)
   int.times {
     random1 = rand(0..6)
     random2 = rand(0..6)
-    santas << Santa.new(example_genders[random1], example_ethnicities[random2])
+    new_santa=Santa.new(example_genders[random1], example_ethnicities[random2])
+    p new_santa.age = rand(140)
+    p new_santa.gender
+    p new_santa.ethnicity
+    p new_santa.reindeer_ranking
+    p new_santa.speak
   }
-  santas
 end
 
 
 
-santa_gen(6) 
+santa_gen(99) 
 
   
-=end
+
