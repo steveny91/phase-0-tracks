@@ -59,7 +59,7 @@ class WordGame
   end
   
 end
-=begin    
+
 ###################################################################    
 puts "please insert a word to start the game"
 input = gets.chomp.downcase
@@ -71,10 +71,10 @@ game.word_encrypter
 while game.game_over == FALSE
   puts "try to guess a letter or the whole word"
   letter = gets.chomp.downcase
-  game1.letter_checker(letter)
+  game.letter_checker(letter)
 end
 
-=end
+
 
 
 
