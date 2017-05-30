@@ -63,9 +63,10 @@ end
 ###################################################################    
 puts "please insert a word to start the game"
 input = gets.chomp.downcase
-
+puts "\e[H\e[2J"
 game = WordGame.new(input)
 game.word_encrypter
+
 
 
 while game.game_over == FALSE
