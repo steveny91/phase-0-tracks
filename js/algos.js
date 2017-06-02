@@ -8,4 +8,20 @@ output: longest phrase in an array
   The longer word will be kept
   Then compare the longer word with next word in the array and keep the longer word
   repeat until whole array has been checked.
+*/
 
+
+var string_array = ["long phrase","longest phrase","123asdgqwetqwerqwer","longer phrase"]
+
+
+function longest_word(string){
+  var longest = '' ;
+  for (var i = 0; i < string.length; i++) {
+    if(string[i].length > longest.length){
+      longest = string[i];
+    }
+  }
+  return longest
+}
+
+longest_word(string_array)
