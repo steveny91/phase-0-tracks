@@ -38,3 +38,19 @@ output: True or false depending if there's any matches
   If the value is not true then proceed to next key and compare
   If no key value pair matches then return false
 */
+
+
+function key_pair(hash1 , hash2){
+  var match = false
+  for (var k in hash1) {
+    if(hash1[k] == hash2[k]){
+      match = true;
+    }
+  }
+  return match
+}
+
+
+console.log(key_pair({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}))
+console.log(key_pair({name: "Steven", age: 54}, {name: "Tamir", age: 54}))
+console.log(key_pair({animal: "Do", legs: 4}, {animal: "Dog", legs: 3}))
