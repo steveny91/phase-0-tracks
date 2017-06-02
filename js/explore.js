@@ -11,3 +11,16 @@ Output = string
 */
 
 
+function reverse_string(str){
+  var rstr = "";
+  for (var i = str.length - 1; i >= 0; i--) {
+    rstr+= str[i];
+  }
+  if (str.length < 7){
+    return rstr;
+  } else {
+    return str;
+  }
+}
+
+console.log(reverse_string("hello"))
