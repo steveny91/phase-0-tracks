@@ -66,5 +66,25 @@ output: array with length of input
   Generate a word with n length
   Put word into an empty array
   Repeat until the array has a length of the desire integer
+  Once array is generated, feed array into find longest word function
 */
 
+function random_array(length){
+  var array = [];
+  for (var i = 0; i < length; i++){
+    var int = Math.floor(Math.random()*9 + 1);
+    var str = '';
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    for (var x = 0; x < int; x++){
+      var randalpha = Math.floor(Math.random()*26);
+      str += alphabet[randalpha];
+    }
+    array.push(str)
+  }
+  return array
+}
+
+var z = random_array(7)
+
+console.log(z)
+console.log(longest_word(z))
