@@ -72,11 +72,11 @@ output: array with length of input
 function random_array(length){
   var array = [];
   for (var i = 0; i < length; i++){
-    var int = Math.floor(Math.random()*9 + 1);
+    var int = Math.floor(Math.random()*10 + 1);
     var str = '';
     var alphabet = "abcdefghijklmnopqrstuvwxyz";
     for (var x = 0; x < int; x++){
-      var randalpha = Math.floor(Math.random()*26);
+      var randalpha = Math.floor(Math.random()*25);
       str += alphabet[randalpha];
     }
     array.push(str)
