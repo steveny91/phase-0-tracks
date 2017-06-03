@@ -54,3 +54,17 @@ function key_pair(hash1 , hash2){
 console.log(key_pair({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}))
 console.log(key_pair({name: "Steven", age: 54}, {name: "Tamir", age: 54}))
 console.log(key_pair({animal: "Do", legs: 4}, {animal: "Dog", legs: 3}))
+
+
+/*
+Pseudocode
+Function to return an array with n length with phrases of varying length of 1 to 10
+Input: integer
+output: array with length of input
+  Take an integer
+  Generate a random number (n)
+  Generate a word with n length
+  Put word into an empty array
+  Repeat until the array has a length of the desire integer
+*/
+
