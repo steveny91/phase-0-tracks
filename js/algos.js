@@ -84,7 +84,6 @@ function random_array(length){
   return array
 }
 
-var z = random_array(7)
-
+var z = random_array(10)
 console.log(z)
 console.log(longest_word(z))
