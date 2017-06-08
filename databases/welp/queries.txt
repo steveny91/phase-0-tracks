@@ -1,0 +1,11 @@
+sqlite> select * from reviews join users, businesses on reviews.user_id = users.id and reviews.business_id = businesses.id;
+
+1|4|Was super|1|1|1|Bobo|Fresh|1|Some Name
+2|2|Was not super|2|2|2|Bo|Jackson|2|Some Other Name
+3|3|was okay|3|3|3|No|Jarison|3|Something Else
+
+sqlite> select users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment from reviews join users, businesses on reviews.user_id = users.id and reviews.business_id = businesses
+.id;
+Bobo|Fresh|Some Name|4|Was super
+Bo|Jackson|Some Other Name|2|Was not super
+No|Jarison|Something Else|3|was okay
