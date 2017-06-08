@@ -9,3 +9,11 @@ sqlite> select users.first_name, users.last_name, businesses.name, reviews.stars
 Bobo|Fresh|Some Name|4|Was super
 Bo|Jackson|Some Other Name|2|Was not super
 No|Jarison|Something Else|3|was okay
+
+sqlite> select users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment from reviews join users, businesses on reviews.user_id = users.id and reviews.business_id = businesses
+.id and businesses.name = "Some Name";
+Bobo|Fresh|Some Name|4|Was super
+
+sqlite> select users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment from reviews join users, businesses on reviews.user_id = users.id and reviews.business_id = businesses
+.id and businesses.name = "Some Other Name";
+Bo|Jackson|Some Other Name|2|Was not super
