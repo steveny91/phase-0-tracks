@@ -1,0 +1,83 @@
+sqlite> select * from classes;
+1|Chemistry|20|3|1
+2|Chemistry lab|20|1|1
+3|Algebra|50|4|2
+4|Algebra 2|50|4|2
+5|Music|15|3|3
+6|Painting|15|3|3
+
+
+sqlite> update classes set num_students=10 where subject="Painting";
+sqlite> select * from classes;
+1|Chemistry|20|3|1
+2|Chemistry lab|20|1|1
+3|Algebra|50|4|2
+4|Algebra 2|50|4|2
+5|Music|15|3|3
+6|Painting|10|3|3
+
+
+sqlite> select * from classes, teachers where classes.teacher_id = teachers.id;
+1|Chemistry|20|3|1|1|Bob|Boon
+2|Chemistry lab|20|1|1|1|Bob|Boon
+3|Algebra|50|4|2|2|John|Axel
+4|Algebra 2|50|4|2|2|John|Axel
+5|Music|15|3|3|3|Mike|Brody
+6|Painting|10|3|3|3|Mike|Brody
+
+
+sqlite> select classes.subject, classes.num_students, classes.credits, teachers.first_name, teachers.last_name from classes join teachers on classes.teacher_id = teachers.id;
+Chemistry|20|3|Bob|Boon
+Chemistry lab|20|1|Bob|Boon
+Algebra|50|4|John|Axel
+Algebra 2|50|4|John|Axel
+Music|15|3|Mike|Brody
+Painting|10|3|Mike|Brody
+
+
+sqlite> delete from classes where subject="Chemistry lab";
+sqlite> select * from classes;
+1|Chemistry|20|3|1
+3|Algebra|50|4|2
+4|Algebra 2|50|4|2
+5|Music|15|3|3
+6|Painting|10|3|3
+
+
+(cross join just cross multiplies the two tables. So each class will get assign the each teacher once)
+sqlite> select  * from classes cross join teachers;
+1|Chemistry|20|3|1|1|Bob|Boon
+1|Chemistry|20|3|1|2|John|Axel
+1|Chemistry|20|3|1|3|Mike|Brody
+3|Algebra|50|4|2|1|Bob|Boon
+3|Algebra|50|4|2|2|John|Axel
+3|Algebra|50|4|2|3|Mike|Brody
+4|Algebra 2|50|4|2|1|Bob|Boon
+4|Algebra 2|50|4|2|2|John|Axel
+4|Algebra 2|50|4|2|3|Mike|Brody
+5|Music|15|3|3|1|Bob|Boon
+5|Music|15|3|3|2|John|Axel
+5|Music|15|3|3|3|Mike|Brody
+6|Painting|10|3|3|1|Bob|Boon
+6|Painting|10|3|3|2|John|Axel
+6|Painting|10|3|3|3|Mike|Brody
+
+
+
+(Added an extra class that missing the teacher to see the effect of left outer join)
+sqlite> insert into classes(subject, num_students, credits) values ("Chemistry lab", 10, 1);
+sqlite> select  * from classes left outer join teachers on classes.teacher_id = teachers.id;
+1|Chemistry|20|3|1|1|Bob|Boon
+3|Algebra|50|4|2|2|John|Axel
+4|Algebra 2|50|4|2|2|John|Axel
+5|Music|15|3|3|3|Mike|Brody
+6|Painting|10|3|3|3|Mike|Brody
+7|Chemistry lab|10|1||||
+
+(without left outer join)
+sqlite> select * from classes join teachers on classes.teacher_id = teachers.id;
+1|Chemistry|20|3|1|1|Bob|Boon
+3|Algebra|50|4|2|2|John|Axel
+4|Algebra 2|50|4|2|2|John|Axel
+5|Music|15|3|3|3|Mike|Brody
+6|Painting|10|3|3|3|Mike|Brody
