@@ -1,8 +1,13 @@
+###### General app to create notes and store notes. Can also function as phonebook ######
+###### I'm sorry for whoever has to read this. The code is super repetitve as I didn't had the time to refactor ######
+
 require 'sqlite3'
 
 ######Database creation######
 notebook = SQLite3::Database.new("notebook.db")
 notebook.results_as_hash = true
+
+
 
 #######Table creation#######
 #create a table to hold name and phone numbers
@@ -13,6 +18,7 @@ create_table_cmd_1 = <<-SQL
     phone_num int
   )
 SQL
+
 
 
 #create a table to hold notes
@@ -26,16 +32,15 @@ create_table_cmd_2 = <<-SQL
 SQL
 
 
+
 #Creation of the tables
 notebook.execute(create_table_cmd_1)
 notebook.execute(create_table_cmd_2)
 
 
+
 #methods
-
 #View all data
-
-
 def data_view(notebook, selection)
   selected = notebook.execute("select * from #{selection}")
   if selection == "phonebook"
@@ -53,6 +58,8 @@ def data_view(notebook, selection)
     puts "bad selection"
   end
 end
+
+
 
 #add to tables
 def phone_add(name, phone_number, notebook)
@@ -75,6 +82,7 @@ def note_edit(name, subject, note, notebook)
 end
 
 
+
 #methods to delete entries
 def phone_delete(name, notebook)
   notebook.execute("delete from phonebook where name=?", [name])
@@ -87,7 +95,6 @@ end
 
 
 #data deletion
-
 def data_delete(access_table, name, notebook)
   if access_table == "phonebook"
     phone_delete(name, notebook)
@@ -95,9 +102,6 @@ def data_delete(access_table, name, notebook)
     note_delete(name, notebook)
   end
 end
-
-
-
 
 
 
@@ -120,8 +124,6 @@ end
 
 
 
-
-
 #Driver code for random data entry to test codes
 phone_add("Steven", 5555555555, notebook)
 phone_add("Steve", 5555555554, notebook)
@@ -138,17 +140,7 @@ note_add("css", "general info"," Cascading Style Sheets, or CSS, are a way to ch
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+#big logic driver code to control interface.
 
 quit = false
 until quit == true do
@@ -222,7 +214,11 @@ end
 
 
 =begin
-Code bits to set up a one to many relationship table using ingredients and subjects as foreign key
+Code graveyard that I might revive if I have the time for it.
+
+
+
+
 
 
 create_table_cmd_2 = <<-SQL
