@@ -21,7 +21,7 @@ create_table_cmd_2 = <<-SQL
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
     ingredient varchar(255),
-    recipe_body varchar(255)
+    body varchar(255)
   )
 SQL
 
@@ -30,9 +30,9 @@ SQL
 create_table_cmd_3 = <<-SQL
   CREATE TABLE IF NOT EXISTS notes(
     id INTEGER PRIMARY KEY,
-    title VARCHAR(255),
+    name VARCHAR(255),
     subject varchar(255),
-    note_body varchar(255)
+    body varchar(255)
   )
 SQL
 
@@ -58,12 +58,12 @@ def phone_add(name, phone_number, notebook)
   notebook.execute("INSERT INTO phonebook (name, phone_num) VALUES (?, ?)", [name, phone_number])
 end
 
-def note_add(title, subject, note, notebook)
-  notebook.execute("INSERT INTO notes (title, subject, note_body) values (?,?,?)", [title, subject, note])
+def note_add(name, subject, note, notebook)
+  notebook.execute("INSERT INTO notes (name, subject, body) values (?,?,?)", [name, subject, note])
 end
 
 def recipe_add(name, ingredient, recipe, notebook)
-  notebook.execute("INSERT INTO recipes (name, ingredient, recipe_body) values (?,?,?)", [name, ingredient, recipe])
+  notebook.execute("INSERT INTO recipes (name, ingredient, body) values (?,?,?)", [name, ingredient, recipe])
 end
 
 #methods to edit entries
@@ -71,12 +71,12 @@ def phone_edit(name, phone_number, notebook)
   notebook.execute("update phonebook set phone_num=? where name=?", [phone_number, name])
 end
 
-def note_edit(title, subject, note, notebook)
-  notebook.execute("update notes set subject=?, note_body=? where title=?", [subject, note, title])
+def note_edit(name, subject, note, notebook)
+  notebook.execute("update notes set subject=?, body=? where name=?", [subject, note, name])
 end
 
 def recipe_edit(name, ingredient, recipe, notebook)
-  notebook.execute("update recipes set ingredient=?, recipe_body=? where name=?", [ingredient, recipe, name])
+  notebook.execute("update recipes set ingredient=?, body=? where name=?", [ingredient, recipe, name])
 end
 
 #methods to delete entries
@@ -84,8 +84,8 @@ def phone_delete(name, notebook)
   notebook.execute("delete from phonebook where name=?", [name])
 end
 
-def note_delete(title, notebook)
-  notebook.execute("delete from notes where title=?", [title])
+def note_delete(name, notebook)
+  notebook.execute("delete from notes where name=?", [name])
 end
 
 def recipe_delete(name, notebook)
@@ -93,22 +93,45 @@ def recipe_delete(name, notebook)
 end
 
 
+
 phone_add("Steven", 5555555555, notebook)
+phone_add("Steve", 5555555554, notebook)
+phone_add("Stevie", 5555555556, notebook)
 note_add("paragraph tags", "html"," p tags or paragraph tags are inline elements", notebook)
+note_add("paragraph", "html"," p tags or paragraph tags are inline elements", notebook)
 recipe_add("grilled chicken", "chicken", "put chicken on a grill with a little bit of oil. Salt and pepper to taste", notebook)
+recipe_add("grilled chicken", "chicken", "put chicken on a grill with a little bit of oil", notebook)
 phone_edit("Steven", 6666666666, notebook)
 note_edit("paragraph tags", "html"," <p> tags or paragraph tags are inline elements", notebook)
 recipe_edit("grilled chicken", "chicken breast", "put chicken on a grill with a little bit of oil. Salt and pepper to taste after done cooking", notebook)
-note_delete("paragraph tags", notebook)
 
 
+#View data
+puts "Which book do you want to view? (phonebook, notes, recipes)"
+selection = gets.chomp.downcase
 
-notes = notebook.execute("select * from notes")
-notes.each do |k|
-  puts "the #{k['title']} is #{k['note_body']}"
+selected = notebook.execute("select * from #{selection}")
+
+if selection == "phonebook"
+  selected.each do |k|
+    puts "#{k[1]}" 
+    puts "#{k[2]}"
+  end
+elsif selection == "notes" or selection == "recipes"
+  selected.each do |k|
+    puts "#{k['name']}" 
+    puts "#{k['body']}"
+  end
+else
+  puts "bad selection"
 end
 
+p selected
 
+
+note_delete("paragraph tags", notebook)
+recipe_delete("grilled chicken", notebook)
+phone_delete("Steven", notebook)
 
 
 
