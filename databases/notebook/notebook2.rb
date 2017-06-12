@@ -211,7 +211,23 @@ end
 =begin
 Code graveyard that I might revive if I have the time for it.
 
+Search feature 
 
+def data_view(notebook, selection, subject)
+  if selection == "phonebook"
+    selected = notebook.execute("select * from #{selection} where phonebook.name = #{subject}")
+    selected.each do |k|
+      puts "Name: #{k[1]}" 
+      puts "Phone Number: #{k[2]}"
+    end
+  elsif selection == "notes"
+    selected = notebook.execute("select * from #{selection} where notes.subject = #{subject}")
+    selected.each do |k|
+      puts "Title: #{k['name']}"
+      puts "Subject: #{k['subject']}" 
+      puts "Note: #{k['body']}"
+  end
+end
 
 
 
