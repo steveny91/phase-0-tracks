@@ -40,13 +40,14 @@ def data_view(notebook, selection)
   selected = notebook.execute("select * from #{selection}")
   if selection == "phonebook"
     selected.each do |k|
-      puts "#{k[1]}" 
-      puts "#{k[2]}"
+      puts "Name: #{k[1]}" 
+      puts "Phone Number: #{k[2]}"
     end
   elsif selection == "notes"
     selected.each do |k|
-      puts "#{k['name']}" 
-      puts "#{k['body']}"
+      puts "Title: #{k['name']}"
+      puts "Subject: #{k['subject']}" 
+      puts "Note: #{k['body']}"
     end
   else
     puts "bad selection"
@@ -125,8 +126,15 @@ end
 phone_add("Steven", 5555555555, notebook)
 phone_add("Steve", 5555555554, notebook)
 phone_add("Stevie", 5555555556, notebook)
-note_add("paragraph tags", "html"," p tags or paragraph tags are inline elements", notebook)
-note_add("paragraph", "html"," p tags or paragraph tags are inline elements", notebook)
+phone_add("Stu", 4444444444, notebook)
+phone_add("Stew", 4555555554, notebook)
+phone_add("Stewie", 6555555556, notebook)
+note_add("sql", "general info"," SQL Structured Query Language is a domain-specific language used in programming and designed for managing data held in a relational database management system (RDBMS), or for stream processing in a relational data stream management system (RDSMS).
+", notebook)
+note_add("html", "general info"," HyperText Markup Language (HTML) is a markup language for creating webpages. Webpages are usually viewed in a web browser. They can include writing, links, pictures, and even sound and video. HTML is used to mark and describe each of these kinds of content so the web browser can show them correctly.", notebook)
+
+note_add("ruby", "commands"," #nill? tells us whether or not an object is empty in ruby. #length tell us how long the object is.", notebook)
+note_add("css", "general info"," Cascading Style Sheets, or CSS, are a way to change the look of HTML and XHTML web pages. CSS was designed by the W3C, and is supported well by most modern web browsers. The current version of CSS is CSS3. CSS4 is available, but is split into parts.", notebook)
 
 
 
@@ -190,7 +198,7 @@ until quit == true do
     puts "What book do you want to access? (Notes or Phonebook)"
     access = gets.chomp.downcase
     puts "What is the name/title of the page you want to delete?"
-    name = gets.chomp
+    name = gets.chomp.capitalize
     data_delete(access, name, notebook)
     puts "deleted"
   elsif perform_option == "quit"
