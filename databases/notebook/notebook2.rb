@@ -146,9 +146,6 @@ quit = false
 until quit == true do
   puts "Which option do you want to perform? (View, add, edit, delete or quit to exit)"
   perform_option = gets.chomp.downcase
-
-  
-
   if perform_option == "view"
     puts "What book do you want to access? (Notes or Phonebook)"
     access = gets.chomp.downcase
@@ -178,7 +175,6 @@ until quit == true do
       puts "what's the subject?"
       main_subject = gets.chomp.capitalize
       note_edit(name, main_subject, entry_loop, notebook)
-    
     elsif access == "phonebook"
       puts "what's the new phone number?"
       main_subject = gets.chomp.capitalize
@@ -198,7 +194,6 @@ until quit == true do
   else
     puts "wrong selection"
   end
-
 end
 
 
@@ -216,7 +211,23 @@ end
 =begin
 Code graveyard that I might revive if I have the time for it.
 
+Search feature 
 
+def data_view(notebook, selection, subject)
+  if selection == "phonebook"
+    selected = notebook.execute("select * from #{selection} where phonebook.name = #{subject}")
+    selected.each do |k|
+      puts "Name: #{k[1]}" 
+      puts "Phone Number: #{k[2]}"
+    end
+  elsif selection == "notes"
+    selected = notebook.execute("select * from #{selection} where notes.subject = #{subject}")
+    selected.each do |k|
+      puts "Title: #{k['name']}"
+      puts "Subject: #{k['subject']}" 
+      puts "Note: #{k['body']}"
+  end
+end
 
 
 
@@ -305,5 +316,6 @@ def data_delete(access_table, name, notebook)
     recipe_delete(name, notebook)
   end
 end
+
 
 =end
