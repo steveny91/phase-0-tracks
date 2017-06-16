@@ -1,0 +1,34 @@
+#contact-info, .accomplishments{
+  font-size: .8em;
+}
+
+
+.job {
+  background-color: #e9e5dc;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+
+.job h3{
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.job li{
+  background-color: red;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.job li:hover{
+  background-color: blue;
+}
+
+section > h3 {
+  background-color:orange;
+}
