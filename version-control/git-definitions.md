@@ -17,3 +17,6 @@
 
 * What is a merge conflict?
     When you try to merge a branch, but the branch has content on the same line as the master. For example on the master there is "hello world!" on line 1 and the branch has "hello class!" in line 1. Since they both have content on the same location, the computer does not know how to resolve this and would need to be resolved manually.
+
+
+* Added more text

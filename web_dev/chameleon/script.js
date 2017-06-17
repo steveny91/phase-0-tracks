@@ -8,3 +8,4 @@ function addPinkBorder(event) {
 
 var photo = document.getElementById("lizard-photo");
 photo.addEventListener("click", addPinkBorder);
+
