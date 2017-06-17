@@ -1,4 +1,4 @@
-//release 1
+//release 1 add an li element into the ul
 var elements = document.getElementsByTagName("ul")
 var element = elements[0]
 var list = document.createElement("li");
@@ -8,7 +8,7 @@ list.appendChild(text);
 element.appendChild(list);
 
 
-//release 2
+//release 2 event listeners for buttons
 var buttons = document.getElementsByTagName("button");
 var button = buttons[0]
 
