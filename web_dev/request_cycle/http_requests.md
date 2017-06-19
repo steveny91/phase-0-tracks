@@ -12,6 +12,7 @@ Some HTTP codes:
 
 
 Get: is when we retrieve data from a server
+
 Post: when we submit data to a server to keep
 
 
