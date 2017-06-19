@@ -66,3 +66,9 @@ get '/:num1/plus/:num2' do
   add = params[:num1].to_i + params[:num2].to_i
   add.to_s
 end
+
+
+get '/search_name/:name' do
+    student = db.execute("SELECT * FROM students WHERE name=?", [params[:name]])[0]
+    student.to_s
+end
