@@ -1,6 +1,7 @@
 # require gems
 require 'sinatra'
 require 'sqlite3'
+require "sinatra/reloader" if development?
 
 set :public_folder, File.dirname(__FILE__) + '/static'
 
@@ -15,6 +16,11 @@ end
 
 get '/students/new' do
   erb :new_student
+end
+
+get '/new_page' do
+  @students = db.execute("SELECT * FROM students")
+  erb :new_page
 end
 
 # create new students via

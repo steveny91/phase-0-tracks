@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New ERB page </title>
+</head>
+<body>
+  <h1>Testing out erb stuff</h1>
+  <p>ipsum lorem</p>
+  <p>Click <a href="students/new">here</a> to create a new student.</p>
+  <p>Click <a href="/">here</a> to go back to main.</p>
+  <ul>
+    <% @students.each do |student| %>
+      <li> <%= student['name'] %> </li>
+    <% end %>
+  </ul>
+</body>
+</html>
